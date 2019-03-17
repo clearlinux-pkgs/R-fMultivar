@@ -4,18 +4,12 @@
 #
 Name     : R-fMultivar
 Version  : 3042.80
-Release  : 8
+Release  : 9
 URL      : https://cran.r-project.org/src/contrib/fMultivar_3042.80.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fMultivar_3042.80.tar.gz
 Summary  : Rmetrics - Analysing and Modeling Multivariate Financial Return
 Group    : Development/Tools
 License  : GPL-2.0+
-Requires: R-cubature
-Requires: R-fBasics
-Requires: R-mvtnorm
-Requires: R-sn
-Requires: R-timeDate
-Requires: R-timeSeries
 BuildRequires : R-cubature
 BuildRequires : R-fBasics
 BuildRequires : R-mvtnorm
@@ -36,11 +30,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1538578572
+export SOURCE_DATE_EPOCH=1552851798
 
 %install
+export SOURCE_DATE_EPOCH=1552851798
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1538578572
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -75,8 +69,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library fMultivar|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  fMultivar || :
 
 
 %files
@@ -105,10 +98,8 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/fMultivar/obsolete/man/utils-adapt.Rd
 /usr/lib64/R/library/fMultivar/obsolete/src/adapt2.f
 /usr/lib64/R/library/fMultivar/obsolete/src/adapt_callback.c
+/usr/lib64/R/library/fMultivar/tests/doRUnit.R
 /usr/lib64/R/library/fMultivar/unitTests/Makefile
-/usr/lib64/R/library/fMultivar/unitTests/report.html
-/usr/lib64/R/library/fMultivar/unitTests/report.txt
-/usr/lib64/R/library/fMultivar/unitTests/reportSummary.txt
 /usr/lib64/R/library/fMultivar/unitTests/runTests.R
 /usr/lib64/R/library/fMultivar/unitTests/runit.BivariateBinning.R
 /usr/lib64/R/library/fMultivar/unitTests/runit.BivariateDistributions.R
