@@ -4,7 +4,7 @@
 #
 Name     : R-fMultivar
 Version  : 3042.80.1
-Release  : 21
+Release  : 22
 URL      : https://cran.r-project.org/src/contrib/fMultivar_3042.80.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fMultivar_3042.80.1.tar.gz
 Summary  : Rmetrics - Analysing and Modeling Multivariate Financial Return
@@ -30,21 +30,22 @@ to manage, to investigate and to analyze bivariate and multivariate
 
 %prep
 %setup -q -c -n fMultivar
+cd %{_builddir}/fMultivar
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583771962
+export SOURCE_DATE_EPOCH=1589770687
 
 %install
-export SOURCE_DATE_EPOCH=1583771962
+export SOURCE_DATE_EPOCH=1589770687
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
