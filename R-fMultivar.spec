@@ -4,7 +4,7 @@
 #
 Name     : R-fMultivar
 Version  : 3042.80.2
-Release  : 38
+Release  : 39
 URL      : https://cran.r-project.org/src/contrib/fMultivar_3042.80.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fMultivar_3042.80.2.tar.gz
 Summary  : Rmetrics - Analysing and Modeling Multivariate Financial Return
